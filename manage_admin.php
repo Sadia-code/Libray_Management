@@ -1,4 +1,3 @@
-
 <?php include('connection.php') ;  ?>
 <?php include('header.php') ;  ?>
 <?php include('menu.php') ;  ?>
@@ -43,10 +42,18 @@
 			<div class="content">
 			
 								
-
+           <a href="add_admin.php">
 		    <button type="button" class="btn btn-primary mb-5"><i class="icon-plus3 mr-2"></i> Add Admin</button>
 	                    	
+</a>
 
+<?php
+           //checking the seesion
+           if(isset($_SESSION['add'])){
+             echo('<br>'.$_SESSION['add'].'<br><br>') ;
+             unset($_SESSION['add']);
+           }
+           ?>
 
 				
 
@@ -59,22 +66,48 @@
 					<table class="table datatable-basic" style="width: 100%; ">
 						<thead>
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
+							<th>Serial No</th>
+								<th>Full Name</th>
+								<th>User Name</th>
+								<th>Email</th>
 								<th>Job Title</th>
-								<th>DOB</th>
-								<th>Status</th>
 								<th class="text-center">Actions</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>Marth</td>
-								<td><a href="#">Enright</a></td>
-								<td>Traffic Court Referee</td>
-								<td>22 Jun 1972</td>
-								<td><span class="badge badge-success">Active</span></td>
-								<td class="text-center">
+						<?php 
+        //query to get all admin
+        $query = "SELECT * FROM admin";
+        //execute the query
+        $result=mysqli_query($connection, $query);
+        
+        if($result==TRUE)
+        {
+          //count rows to check whether the data is in database or not
+          $count=mysqli_num_rows($result);
+          $serial_no=1;//create a variable and assign the value
+          //check the num of rows
+          if($count>0)
+          {
+            while($rows=mysqli_fetch_assoc($result))
+            {
+              //using while loop to get all data from database
+              //get individual data
+              $id=$rows['id'];
+              $full_name =$rows['full_name'] ;
+              $user_name =$rows['username'];
+			  $email=$rows['email'];
+			  $job_title=$rows['job'];
+            
+              //display values in our table
+              ?>
+              <tbody>
+                    <tr>
+                      <th scope="row"><?php echo $serial_no++ ?>.</th>
+                      <td><?php echo $full_name ?></td>
+                      <td><?php echo $user_name ?></td>
+					  <td><?php echo $email ?></td>
+					  <td><?php echo $job_title ?></td>
+                      <td class="text-center">
 								<div class="list-icons">
 										<div class="dropdown">
 											<a href="#" class="list-icons-item" data-toggle="dropdown">
@@ -88,29 +121,25 @@
 										</div>
 									</div>
 								</td>
-							</tr>
+                    </tr>
+    
+              </tbody>
+              <?php
+            }
 
-							<tr>
-								<td>Sadia</td>
-								<td><a href="#">Dipa</a></td>
-								<td>Student</td>
-								<td>20 Jun 2018</td>
-								<td><span class="badge badge-success">Active</span></td>
-								<td class="text-center">
-								<div class="list-icons">
-										<div class="dropdown">
-											<a href="#" class="list-icons-item" data-toggle="dropdown">
-												<i class="icon-menu9"></i>
-											</a>
+          } 
+          else{
 
-											<div class="dropdown-menu dropdown-menu-right">
-											<button type="button" class="btn btn-success mb-1 ml-4"><i class="icon-pencil5 mr-2"></i>Update</button>
-											<button type="button" class="btn btn-danger ml-4"><i class="icon-cancel-circle2 mr-2"></i>Delete</button>
-											</div>
-										</div>
-									</div>
-								</td>
-							</tr>
+          }
+
+        }
+
+        ?>
+  
+  <tbody>
+							
+
+ 
 							
 							
 						</tbody>

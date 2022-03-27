@@ -1,4 +1,8 @@
-<?php include('connection.php') ;  ?>
+<?php include('connection.php') ;  
+include('login_check.php') ;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +55,7 @@
 						
 						<div class="dropdown-divider"></div>
 						
-						<a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+						<a href="logout.php" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
 					</div>
 				</li>
 			</ul>

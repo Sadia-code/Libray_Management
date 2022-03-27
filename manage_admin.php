@@ -57,6 +57,10 @@
             echo('<br>'.$_SESSION['delete'].'<br><br>') ;
             unset($_SESSION['delete']);
            }
+		   if(isset($_SESSION['update'])){
+            echo('<br>'.$_SESSION['update'].'<br><br>') ;
+            unset($_SESSION['update']);
+           }
            ?>
 
 				
@@ -119,7 +123,7 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-right">
-											<button type="button" class="btn btn-success mb-1 ml-4"><i class="icon-pencil5 mr-2"></i>Update</button>
+											<a href="<?php echo SITEURL  ?>update_admin.php?id=<?php echo $id;  ?>"><button type="button" class="btn btn-success mb-1 ml-4"><i class="icon-pencil5 mr-2"></i>Update</button></a>
 											<a href="<?php echo SITEURL  ?>delete_admin.php?id=<?php echo $id;  ?>"><button type='button' class='btn btn-danger ml-4'><i class='icon-cancel-circle2 mr-2'></i>Delete</button></a>
 											</div>
 										</div>

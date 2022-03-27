@@ -55,20 +55,19 @@
 					<table class="table datatable-basic" style="width: 100%; ">
 						<thead>
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Job Title</th>
-								<th>DOB</th>
+								<th>Category Name</th>
 								<th>Status</th>
+								<th>Created On</th>
+								<th>Updated On</th>
 								<th class="text-center">Actions</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Marth</td>
-								<td><a href="#">Enright</a></td>
-								<td>Traffic Court Referee</td>
-								<td>22 Jun 1972</td>
+								<td>Database Management</td>
+								<td><a href="#">Enable</a></td>
+								<td>2021-11-17 10:36:53</td>
+								<td>2021-11-17 10:38:39</td>
 								<td><span class="badge badge-success">Active</span></td>
 								<td class="text-center">
 								<div class="list-icons">

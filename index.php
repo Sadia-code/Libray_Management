@@ -38,7 +38,13 @@
 			<!-- Content area -->
 			<div class="content">
 
-				
+			<?php  
+            if(isset($_SESSION['login'])){
+                echo('<br>'.$_SESSION['login']) ;
+                unset($_SESSION['login']);
+              }
+			  
+        ?>
 
 
 				<!-- Dashboard content -->

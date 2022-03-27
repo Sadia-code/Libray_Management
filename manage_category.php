@@ -1,3 +1,4 @@
+<?php include('connection.php') ;  ?>
 <?php include('header.php') ;  ?>
 <?php include('menu.php') ;  ?>
 
@@ -39,12 +40,20 @@
 			<div class="content">
 			
 								
-
+                <a href="add_category.php">
 		    <button type="button" class="btn btn-primary mb-5"><i class="icon-plus3 mr-2"></i> Add Category</button>
-	                    	
+	                    	</a>
 
 
 				
+<?php
+           //checking the seesion
+           if(isset($_SESSION['add'])){
+             echo('<br>'.$_SESSION['add'].'<br><br>') ;
+             unset($_SESSION['add']);
+           }
+           ?>
+
 
 
 				<!-- Dashboard content -->
@@ -63,11 +72,22 @@
 							</tr>
 						</thead>
 						<tbody>
+							 <?php
+
+$sql = "SELECT * FROM categorydata";
+                        $connection =mysqli_connect('localhost', 'root', '', 'lms_nubtk');
+                        $result = mysqli_query($connection, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) {
+?>
 							<tr>
-								<td>Database Management</td>
-								<td><a href="#">Enable</a></td>
-								<td>2021-11-17 10:36:53</td>
-								<td>2021-11-17 10:38:39</td>
+								<td><?php echo $row["Category Name"]; ?></td>
+								<td><?php echo $row["Status"]; ?></td>
+								<td><?php echo $row["Created On"]; ?></td>
+								<td><?php echo $row["Updated On"]; ?></td>
+
+								
 								<td><span class="badge badge-success">Active</span></td>
 								<td class="text-center">
 								<div class="list-icons">
@@ -84,7 +104,16 @@
 									</div>
 								</td>
 							</tr>
-							
+
+							<?php
+                            //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                        }
+                        } else {
+                            echo "0 results";
+                        }
+
+
+                        ?>
 						</tbody>
 					</table>
 				</div>

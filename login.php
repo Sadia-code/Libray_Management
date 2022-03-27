@@ -4,12 +4,20 @@
 <!-- Page content -->
 <div class="page-content">
 
+
+
     <!-- Main content -->
     <div class="content-wrapper">
+    <?php  
+            if(isset($_SESSION['no_login_message'])){
+                echo('<br>'.$_SESSION['no_login_message'].'<br><br>') ;
+                unset($_SESSION['no_login_message']);
+              }
+        ?>
 
         <!-- Content area -->
         <div class="content d-flex justify-content-center align-items-center">
-
+        
             <!-- Login form -->
             <form class="login-form" action="" method="POST">
                 <div class="card mb-0">

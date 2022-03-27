@@ -1,6 +1,6 @@
-<?php include('connection.php') ;  ?>
-<?php include('header.php') ;  ?>
 <?php include('menu.php') ;  ?>
+<?php include('header.php') ;  ?>
+
 
 
 
@@ -52,6 +52,10 @@
            if(isset($_SESSION['add'])){
              echo('<br>'.$_SESSION['add'].'<br><br>') ;
              unset($_SESSION['add']);
+           }
+		   if(isset($_SESSION['delete'])){
+            echo('<br>'.$_SESSION['delete'].'<br><br>') ;
+            unset($_SESSION['delete']);
            }
            ?>
 
@@ -116,7 +120,7 @@
 
 											<div class="dropdown-menu dropdown-menu-right">
 											<button type="button" class="btn btn-success mb-1 ml-4"><i class="icon-pencil5 mr-2"></i>Update</button>
-											<button type="button" class="btn btn-danger ml-4"><i class="icon-cancel-circle2 mr-2"></i>Delete</button>
+											<a href="<?php echo SITEURL  ?>delete_admin.php?id=<?php echo $id;  ?>"><button type='button' class='btn btn-danger ml-4'><i class='icon-cancel-circle2 mr-2'></i>Delete</button></a>
 											</div>
 										</div>
 									</div>

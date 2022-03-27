@@ -1,6 +1,6 @@
-<?php include('connection.php') ; ?>
-<?php include('header.php') ;  ?>
 <?php include('menu.php') ;  ?>
+<?php include('header.php') ;  ?>
+
 
 <body>
 
@@ -107,7 +107,7 @@ if(isset($_POST['submit']))
        //create a session variable to display message
        $_SESSION['add'] = "<div style='color: #ff4757;'> Failed to Add Admin </div>";
        //redirect page
-       header("location:".SITEURL.'add_admin.php');
+       echo "<script>window.location.href='add_admin.php';</script>";
    }
 }
 ?>

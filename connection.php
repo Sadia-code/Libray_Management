@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-   // define('SITEURL', 'http://localhost/');
+    define('SITEURL', 'http://localhost/libray_management/');
     $server = "localhost";
     $user = "root";
     $password = "";

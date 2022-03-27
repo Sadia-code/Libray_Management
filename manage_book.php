@@ -55,20 +55,25 @@
 					<table class="table datatable-basic" style="width: 100%; ">
 						<thead>
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Job Title</th>
-								<th>DOB</th>
+								<th>ID</th>
+								<th>Book-Name</th>
+								<th>Authors Name</th>
+								<th>Edition</th>
 								<th>Status</th>
+								<th>Quantity</th>
+								<th>Department</th>
 								<th class="text-center">Actions</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Marth</td>
-								<td><a href="#">Enright</a></td>
-								<td>Traffic Court Referee</td>
-								<td>22 Jun 1972</td>
+								<td>11180120225</td>
+								<td>Data Structure</td>
+								<td>Afsana</td>
+								<td>2nd</td>
+								<td>Available</td>
+								<td>2</td>
+								<td>CSE</td>
 								<td><span class="badge badge-success">Active</span></td>
 								<td class="text-center">
 								<div class="list-icons">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2022 at 04:33 PM
+-- Generation Time: Mar 27, 2022 at 10:06 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -35,6 +35,26 @@ CREATE TABLE `admin` (
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userdata`
+--
+
+CREATE TABLE `userdata` (
+  `id` varchar(225) NOT NULL,
+  `name` varchar(225) NOT NULL,
+  `father's_name` varchar(225) NOT NULL,
+  `mother's_name` varchar(225) NOT NULL,
+  `department` varchar(225) NOT NULL,
+  `dob` varchar(225) DEFAULT NULL,
+  `mail` varchar(225) NOT NULL,
+  `status` varchar(225) NOT NULL,
+  `contact` varchar(225) DEFAULT NULL,
+  `img` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -44,6 +64,14 @@ CREATE TABLE `admin` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `userdata`
+--
+ALTER TABLE `userdata`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `password` (`password`),
+  ADD UNIQUE KEY `contact` (`contact`);
 
 --
 -- AUTO_INCREMENT for dumped tables

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 04:08 PM
+-- Generation Time: Mar 28, 2022 at 07:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -41,9 +41,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `full_name`, `username`, `email`, `job`, `password`) VALUES
-(1, 'Sadia Dipa', 'sadia_123', 'sadia@gmail.com', 'admin', '91b5cd208feabcc9b01cd14b7e4e83ad'),
-(2, 'Zannatul Oyshi', 'oyshi_123', 'oyshi@gmail.com', 'admin', '7b0de5d985dc9298a0e8a0fb6b76540f'),
-(3, 'Afsana Yeasmin', 'afsana_123', 'afsana@gmail.com', 'admin', '98427fd4fe1dd535d4492e05f3a25236');
+(1, 'Sadia Dipa', 'sadia_123', 'sadia@gmail.com', 'admin_1', '91b5cd208feabcc9b01cd14b7e4e83ad'),
+(2, 'Zannatul Oyshi', 'oyshi_123', 'oyshi@gmail.com', 'admin_2', '7b0de5d985dc9298a0e8a0fb6b76540f'),
+(8, 'Afsana Yeasmin', 'afsana_123', 'afsana@gmail.com', 'admin_3', 'e10adc3949ba59abbe56e057f20f883e'),
+(9, 'Adminstrator', 'admin_123', 'admin@gmail.com', 'admin', 'e10adc3949ba59abbe56e057f20f883e');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

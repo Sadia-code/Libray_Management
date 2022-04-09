@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2022 at 07:26 AM
+-- Generation Time: Apr 09, 2022 at 09:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -41,10 +41,28 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `full_name`, `username`, `email`, `job`, `password`) VALUES
-(1, 'Sadia Dipa', 'sadia_123', 'sadia@gmail.com', 'admin_1', '91b5cd208feabcc9b01cd14b7e4e83ad'),
-(2, 'Zannatul Oyshi', 'oyshi_123', 'oyshi@gmail.com', 'admin_2', '7b0de5d985dc9298a0e8a0fb6b76540f'),
-(8, 'Afsana Yeasmin', 'afsana_123', 'afsana@gmail.com', 'admin_3', 'e10adc3949ba59abbe56e057f20f883e'),
-(9, 'Adminstrator', 'admin_123', 'admin@gmail.com', 'admin', 'e10adc3949ba59abbe56e057f20f883e');
+(2, 'Zannatul Oyshi', 'oyshi_123', '', 'admin_2', '7b0de5d985dc9298a0e8a0fb6b76540f'),
+(9, 'Adminstrator', 'admin_123', '', 'admin', 'e10adc3949ba59abbe56e057f20f883e'),
+(10, 'sadia', 'sadia', 'sadiadipa99999@gmail.com', 'admin', '81dc9bdb52d04dc20036dbd8313ed055');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`id`, `email`, `token`) VALUES
+(0, 'sadiadipa99999@gmail.com', '3fcc11a55f04ff17974e95149dcb1d9efbf0f6a57cefa0703b0b5359ec31ba9177774d380d9db86d23683876dfcc852825aa');
 
 -- --------------------------------------------------------
 
@@ -67,6 +85,13 @@ CREATE TABLE `userdata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `userdata`
+--
+
+INSERT INTO `userdata` (`id`, `name`, `father's_name`, `mother's_name`, `department`, `dob`, `mail`, `status`, `contact`, `img`, `password`) VALUES
+('11180120226', 'Sadia Sultana', 'kuytre', 'jkhgf', 'CSE', 'jhgf', 's@gmail.com', 'Student', '01780077068', '', '12345');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -75,6 +100,12 @@ CREATE TABLE `userdata` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD UNIQUE KEY `token` (`token`);
 
 --
 -- Indexes for table `userdata`
@@ -92,7 +123,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
